@@ -125,18 +125,6 @@ _aws-assume-role()
 }
 complete -F _aws-assume-role aws-assume-role.sh
 
-_terraform_helper()
-{
-    local cur=${COMP_WORDS[COMP_CWORD]}
-    COMPREPLY=( $(compgen -W "apply console destroy env fmt get graph import init output plan providers push refresh show taint untaint validate version workspace debug state force-unlock help" -- $cur) )
-}
-complete -F _terraform_helper terraform
 
-_consul_helper()
-{
-    local cur=${COMP_WORDS[COMP_CWORD]}
-    COMPREPLY=( $(compgen -W "agent event exec force-leave help info join keygen leave members monitor reload version wathc" -- $cur) )
-}
-complete -F _consul_helper consul
 
 
