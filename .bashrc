@@ -116,7 +116,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-
+export PATH="/usr/local/bin/aws-assume-role.sh:$PATH"
 
 _aws-assume-role()
 {
@@ -124,6 +124,13 @@ _aws-assume-role()
     COMPREPLY=( $(compgen -W "aws_configure_profile_admin aws_configure_profile_master aws_sts_assume_master_role aws_configure_profile_nested aws_sts_assume_nested_role apply_cluster_config" -- $cur) )
 }
 complete -F _aws-assume-role aws-assume-role.sh
+
+_trap-simloud-assume-role()
+{
+    local cur=${COMP_WORDS[COMP_CWORD]}
+    COMPREPLY=( $(compgen -W "aws_configure_profile_admin aws_configure_profile_master aws_sts_assume_master_role aws_configure_profile_nested aws_sts_assume_nested_role apply_cluster_config" -- $cur) )
+}
+complete -F _trap-simloud-assume-role trap-simloud-assume-role.sh
 
 _aws-compliter()
 {
