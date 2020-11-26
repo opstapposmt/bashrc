@@ -125,6 +125,132 @@ _aws-assume-role()
 }
 complete -F _aws-assume-role aws-assume-role.sh
 
+_aws-compliter()
+{
+    local cur=${COMP_WORDS[COMP_CWORD]}
+    COMPREPLY=( $(compgen -W "accessanalyzer                 kafka 
+acm                            kendra 
+acm-pca                        kinesis 
+alexaforbusiness               kinesisanalytics 
+amplify                        kinesisanalyticsv2 
+apigateway                     kinesisvideo 
+apigatewaymanagementapi        kinesis-video-archived-media 
+apigatewayv2                   kinesis-video-media 
+appconfig                      kinesis-video-signaling 
+appflow                        kms 
+application-autoscaling        lakeformation 
+application-insights           lambda 
+appmesh                        lex-models 
+appstream                      lex-runtime 
+appsync                        license-manager 
+athena                         lightsail 
+autoscaling                    logs 
+autoscaling-plans              machinelearning 
+backup                         macie 
+batch                          macie2 
+braket                         managedblockchain 
+budgets                        marketplace-catalog 
+ce                             marketplacecommerceanalytics 
+chime                          marketplace-entitlement 
+cloud9                         mediaconnect 
+clouddirectory                 mediaconvert 
+cloudformation                 medialive 
+cloudfront                     mediapackage 
+cloudhsm                       mediapackage-vod 
+cloudhsmv2                     mediastore 
+cloudsearch                    mediastore-data 
+cloudsearchdomain              mediatailor 
+cloudtrail                     meteringmarketplace 
+cloudwatch                     mgh 
+codeartifact                   migrationhub-config 
+codebuild                      mobile 
+codecommit                     mq 
+codeguruprofiler               mturk 
+codeguru-reviewer              neptune 
+codepipeline                   networkmanager 
+codestar                       opsworks 
+codestar-connections           opsworks-cm 
+codestar-notifications         organizations 
+cognito-identity               outposts 
+cognito-idp                    personalize 
+cognito-sync                   personalize-events 
+comprehend                     personalize-runtime 
+comprehendmedical              pi 
+compute-optimizer              pinpoint 
+configservice                  pinpoint-email 
+configure                      pinpoint-sms-voice 
+connect                        polly 
+connectparticipant             pricing 
+cur                            qldb 
+databrew                       qldb-session 
+dataexchange                   quicksight 
+datapipeline                   ram 
+datasync                       rds 
+dax                            rds-data 
+deploy                         redshift 
+detective                      redshift-data 
+devicefarm                     rekognition 
+directconnect                  resource-groups 
+discovery                      resourcegroupstaggingapi 
+dlm                            robomaker 
+dms                            route53 
+docdb                          route53domains 
+ds                             route53resolver 
+dynamodb                       s3 
+dynamodbstreams                s3api 
+ebs                            s3control 
+ec2                            s3outposts 
+ec2-instance-connect           sagemaker 
+ecr                            sagemaker-a2i-runtime 
+ecs                            sagemaker-runtime 
+efs                            savingsplans 
+eks                            schemas 
+elasticache                    sdb 
+elasticbeanstalk               secretsmanager 
+elastic-inference              securityhub 
+elastictranscoder              serverlessrepo 
+elb                            servicecatalog 
+elbv2                          servicecatalog-appregistry 
+emr                            servicediscovery 
+es                             service-quotas 
+events                         ses 
+firehose                       sesv2 
+fms                            shield 
+forecast                       signer 
+forecastquery                  sms 
+frauddetector                  snowball 
+fsx                            sns 
+gamelift                       sqs 
+glacier                        ssm 
+globalaccelerator              sso 
+glue                           sso-admin 
+greengrass                     sso-oidc 
+groundstation                  stepfunctions 
+guardduty                      storagegateway 
+health                         sts 
+history                        support 
+honeycode                      swf 
+iam                            synthetics 
+identitystore                  textract 
+imagebuilder                   timestream-query 
+importexport                   timestream-write 
+inspector                      transcribe 
+iot                            transfer 
+iot1click-devices              translate 
+iot1click-projects             waf 
+iotanalytics                   waf-regional 
+iot-data                       wafv2 
+iotevents                      workdocs 
+iotevents-data                 worklink 
+iot-jobs-data                  workmail 
+iotsecuretunneling             workmailmessageflow 
+iotsitewise                    workspaces 
+iotthingsgraph                 xray 
+ivs                            
+" -- $cur) )
+}
+complete -F _aws-compliter aws
+
 
 
 
